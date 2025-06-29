@@ -28,6 +28,28 @@
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
+
+			// Gallery Carousel
+			(function() {
+				var $gallery = $('.gallery-container');
+				var $images = $gallery.find('img');
+				var imageCount = $images.length;
+				var currentIndex = 0;
+
+				if (imageCount > 0) {
+					setInterval(function() {
+						// Remove active class from current image
+						$images.eq(currentIndex).removeClass('active');
+
+						// Update index to the next image
+						currentIndex = (currentIndex + 1) % imageCount;
+
+						// Add active class to the new image
+						$images.eq(currentIndex).addClass('active');
+					}, 4000); // Change image every 4 seconds
+				}
+			})();
+
 		});
 
 	// Forms.

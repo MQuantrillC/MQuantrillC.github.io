@@ -3009,7 +3009,7 @@ input, select, textarea {
 		-webkit-flex-direction: row;
 		-ms-flex-direction: row;
 		flex-direction: row;
-		min-height: 22.5em;
+		min-height: 18em;
 	}
 
 		body.is-ie .spotlights > section {
@@ -3018,16 +3018,18 @@ input, select, textarea {
 
 		.spotlights > section > .image {
 			background-position: center center;
-			background-size: cover;
+			background-size: contain;
+			background-repeat: no-repeat;
 			border-radius: 0;
 			display: block;
 			position: relative;
-			width: 25em;
+			width: 35em;
 		}
 
 			.spotlights > section > .image img {
 				border-radius: 0;
 				display: block;
+				width: 100%;
 			}
 
 			.spotlights > section > .image:before {
@@ -3047,7 +3049,7 @@ input, select, textarea {
 			}
 
 		.spotlights > section > .content {
-			padding: 4em 5em 2em 5em ;
+			padding: 2em 3em 1em 3em;
 			display: -moz-flex;
 			display: -webkit-flex;
 			display: -ms-flex;
@@ -3062,6 +3064,7 @@ input, select, textarea {
 			justify-content: center;
 			width: 50em;
 			-ms-flex: 1;
+			flex: 1;
 		}
 
 			.spotlights > section > .content > .inner {
@@ -3101,7 +3104,7 @@ input, select, textarea {
 		@media screen and (max-width: 1680px) {
 
 			.spotlights > section > .content {
-				padding: 4em 4em 2em 4em ;
+				padding: 2em 3em 1em 3em;
 			}
 
 		}
@@ -4017,3 +4020,118 @@ input, select, textarea {
 	#two .features section p:first-of-type {
 		color: #FFFFFF;
 	}
+
+/* Swiper Carousel */
+
+.swiper {
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.swiper-slide {
+	background-position: center;
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.swiper-pagination-bullet {
+	background-color: #ffffff;
+	opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+	opacity: 1;
+}
+
+@media (hover: hover) {
+	.swiper-slide:hover img {
+		transform: scale(1.1);
+	}
+}
+
+@media (max-width: 768px) {
+	.swiper-slide {
+		width: 250px;
+		height: 250px;
+	}
+}
+
+/* Marquee Carousel */
+.marquee {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	margin: 2em 0;
+}
+
+.marquee:before, .marquee:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 10rem;
+	height: 100%;
+	z-index: 2;
+}
+
+.marquee:before {
+	left: 0;
+	background: linear-gradient(to right, #2e3141 0%, transparent 100%);
+}
+
+.marquee:after {
+	right: 0;
+	background: linear-gradient(to left, #2e3141 0%, transparent 100%);
+}
+
+.marquee-track {
+	display: flex;
+	white-space: nowrap;
+	animation: marquee 25s linear infinite;
+	width: fit-content;
+}
+
+.marquee-content {
+	flex-shrink: 0;
+	display: flex;
+}
+
+.marquee-content img {
+	height: 250px;
+	width: auto;
+	transition: transform 0.3s ease;
+	margin: 0 1em;
+	border-radius: 10px;
+}
+
+.marquee:hover .marquee-track {
+	animation-play-state: paused;
+}
+
+@media (hover: hover) {
+	.marquee-content img:hover {
+		transform: scale(1.1);
+		z-index: 10;
+		position: relative;
+	}
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}

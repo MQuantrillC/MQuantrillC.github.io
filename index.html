@@ -10,9 +10,23 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
+
+		<!-- Mobile Header -->
+		<header id="header-mobile">
+			<a href="#intro" class="logo scrolly">Marco Q.</a>
+			<nav id="mobile-nav-panel">
+				<!-- Links will be cloned here by JS -->
+			</nav>
+			<button class="hamburger-button" id="hamburger-button" aria-label="Menu">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</button>
+		</header>
 
 		<!-- Sidebar -->
 			<section id="sidebar">
@@ -25,6 +39,7 @@
 							<li><a href="#one">Work Experience</a></li>
 							<li><a href="#certs">Education & Certifications</a></li>
 							<li><a href="#projects">My Projects</a></li>
+							<li><a href="#hobbies">Hobbies & Interests</a></li>
 							<li><a href="#three">Contact</a></li>
 						</ul>
 					</nav>
@@ -40,9 +55,6 @@
 							<h1>Marco Quantrill</h1>
 							<p>I'm a <strong>Full Stack Developer</strong> and <strong>Business Analyst</strong> with a strong foundation in finance, data analysis, and automation. I build web tools and dashboards that help turn data into clear, actionable insights. I work comfortably with <strong>Python, HTML, CSS, SQL,</strong> and <strong>JavaScript</strong>, and I also rely heavily on tools like <strong>Excel</strong> and <strong>Power BI</strong> to explore data, create reports, and solve real business problems. I enjoy creating end-to-end solutions, from backend logic to frontend experiences.<br /><br />
 							I've always been drawn to the way technology can simplify work, solve meaningful problems and unlock better decision-making. Whether it's automating workflows, optimizing decision-making, or improving user experiences, I'm always looking for innovative ways to leverage tech for good. Outside of work, I'm passionate about nature, the outdoors, and physical challenges — from snowboarding and surfing to hiking, camping, and flying my drone. It's where I recharge, find inspiration, and test my limits in a different way.</p>
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">View My Work</a></li>
-							</ul>
 						</div>
 					</section>
 
@@ -194,8 +206,10 @@
 						<div class="inner">
 							<h2>My Projects</h2>
 							<div class="spotlights">
-								<section>
-									<a href="https://mq-portfolio-dashboard.streamlit.app/" class="image" target="_blank"><img src="images/My-Projects-1.webp" alt="Optimal Portfolio Dashboard Screenshot" data-position="center center" /></a>
+								<section class="project-item">
+									<div class="image-clickable" onclick="window.open('https://mq-portfolio-dashboard.streamlit.app/', '_blank')">
+										<img src="images/My-Projects-1.webp" alt="Optimal Portfolio Dashboard Screenshot" data-position="center center" />
+									</div>
 									<div class="content">
 										<div class="inner">
 											<h2>Optimal Portfolio Dashboard</h2>
@@ -207,8 +221,10 @@
 										</div>
 									</div>
 								</section>
-								<section>
-									<a href="https://country-profile-three.vercel.app/" class="image" target="_blank"><img src="images/My-Projects-2.webp" alt="Country Profile Screenshot" data-position="top center" /></a>
+								<section class="project-item">
+									<div class="image-clickable" onclick="window.open('https://country-profile-three.vercel.app/', '_blank')">
+										<img src="images/My-Projects-2.webp" alt="Country Profile Screenshot" data-position="top center" />
+									</div>
 									<div class="content">
 										<div class="inner">
 											<h2>Country Profile Comparator</h2>
@@ -220,8 +236,10 @@
 										</div>
 									</div>
 								</section>
-								<section>
-									<a href="https://www.machupouches.com/" class="image" target="_blank"><img src="images/My-Projects-3.webp" alt="Machu Pouches Screenshot" data-position="25% 25%" /></a>
+								<section class="project-item">
+									<div class="image-clickable" onclick="window.open('https://www.machupouches.com/', '_blank')">
+										<img src="images/My-Projects-3.webp" alt="Machu Pouches Screenshot" data-position="25% 25%" />
+									</div>
 									<div class="content">
 										<div class="inner">
 											<h2>Machu Pouches Webpage</h2>
@@ -234,6 +252,43 @@
 									</div>
 								</section>
 							</div>
+						</div>
+					</section>
+
+				<!-- Hobbies & Interests -->
+					<section id="hobbies" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Hobbies &amp; Interests</h2>
+							<p>Here are a few moments captured with my DJI Mini 4 Pro drone and Insta360 X4 camera. They keep me inspired, balanced, and connected to what matters. Enjoy!</p>
+							
+							<!-- Swiper -->
+							<div class="swiper hobbies-carousel">
+								<div class="swiper-wrapper">
+									<!-- Slides will be populated from the 'videos' folder -->
+									<div class="swiper-slide">
+										<video src="videos/Vertical-Video-1.mp4" playsinline loop muted></video>
+									</div>
+									<div class="swiper-slide">
+										<video src="videos/Vertical-Video-2.mp4" playsinline loop muted></video>
+									</div>
+									<div class="swiper-slide">
+										<video src="videos/Vertical-Video-3.mp4" playsinline loop muted></video>
+									</div>
+									<div class="swiper-slide">
+										<video src="videos/Vertical-Video-4.mp4" playsinline loop muted></video>
+									</div>
+									<div class="swiper-slide">
+										<video src="videos/Vertical-Video-5.mp4" playsinline loop muted></video>
+									</div>
+									<div class="swiper-slide">
+										<video src="videos/Vertical-Video-6.mp4" playsinline loop muted></video>
+									</div>
+									<div class="swiper-slide">
+										<video src="videos/Vertical-Video-7.mp4" playsinline loop muted></video>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</section>
 
@@ -305,19 +360,21 @@
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Marco Quantrill. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Marco Quantrill. All rights reserved.</li>
 					</ul>
 				</div>
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 			<script>
 				document.addEventListener('DOMContentLoaded', function() {
 					const form = document.getElementById('contact-form');
@@ -353,8 +410,97 @@
 							console.error(error);
 						});
 					});
+
+					// Back to Top Button
+					const backToTopButton = document.querySelector('.back-to-top');
+					if (backToTopButton) {
+						window.addEventListener('scroll', function() {
+							if (window.pageYOffset > 300) {
+								backToTopButton.classList.add('show');
+							} else {
+								backToTopButton.classList.remove('show');
+							}
+						});
+
+						backToTopButton.addEventListener('click', function(e) {
+							e.preventDefault();
+							window.scrollTo({ top: 0, behavior: 'smooth' });
+						});
+					}
+
+					// Mobile Navigation
+					const hamburger = document.querySelector('.hamburger-button');
+					const mobileNav = document.getElementById('mobile-nav-panel');
+					
+					if (hamburger && mobileNav) {
+						// Clone sidebar navigation into the mobile panel
+						const mainNav = document.querySelector('#sidebar nav');
+						if (mainNav) {
+							mobileNav.innerHTML = mainNav.innerHTML;
+						}
+
+						hamburger.addEventListener('click', function() {
+							this.classList.toggle('active');
+							mobileNav.classList.toggle('active');
+						});
+
+						// Close menu when a link is clicked
+						const navLinks = mobileNav.querySelectorAll('a');
+						navLinks.forEach(link => {
+							link.addEventListener('click', () => {
+								hamburger.classList.remove('active');
+								mobileNav.classList.remove('active');
+							});
+						});
+					}
+
+					// Hobbies Video Carousel
+					const videoSwiper = new Swiper('.hobbies-carousel', {
+						effect: 'coverflow',
+						grabCursor: true,
+						centeredSlides: true,
+						slidesPerView: 'auto',
+						loop: true,
+						coverflowEffect: {
+							rotate: 0,
+							stretch: 0,
+							depth: 200,
+							modifier: 1,
+							slideShadows: false,
+						},
+						slideToClickedSlide: true,
+						on: {
+							init: function () {
+								// Autoplay the initially active video
+								const activeSlide = this.slides[this.activeIndex];
+								const activeVideo = activeSlide.querySelector('video');
+								if (activeVideo) {
+									activeVideo.play().catch(e => console.error("Autoplay failed:", e));
+								}
+							},
+							slideChange: function () {
+								// Pause all videos
+								this.slides.forEach(slide => {
+									const video = slide.querySelector('video');
+									if (video) {
+										video.pause();
+									}
+								});
+
+								// Play the active video
+								const activeSlide = this.slides[this.activeIndex];
+								const activeVideo = activeSlide.querySelector('video');
+								if (activeVideo) {
+									activeVideo.play().catch(e => console.error("Autoplay failed:", e));
+								}
+							},
+						},
+					});
 				});
 			</script>
+
+		<!-- Back to Top Button -->
+		<a href="#" class="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
 
 	</body>
 </html>

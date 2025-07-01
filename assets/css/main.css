@@ -4609,4 +4609,25 @@ input, select, textarea {
 	}
 }
 
+/* Contact Social Icons */
+#contact .icons a {
+	font-size: 1.5em;
+	transition: color 0.2s ease-in-out;
+}
+
+#contact .icons a:hover {
+	color: #ffffff;
+}
+
+@media screen and (max-width: 736px) {
+	#contact .icons {
+		padding-bottom: 1em;
+	}
+
+	#contact .icons a {
+		font-size: 1.8em;
+		padding: 0 0.5em;
+	}
+}
+
 </rewritten_file>

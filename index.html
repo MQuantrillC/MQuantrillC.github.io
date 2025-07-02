@@ -9,7 +9,10 @@
 		<title>Marco Quantrill - Personal Page</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/main.css?v=2" />
 		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -17,16 +20,16 @@
 
 		<!-- Mobile Header -->
 		<header id="header-mobile">
-			<a href="#intro" class="logo scrolly">Marco Q.</a>
-			<nav id="mobile-nav-panel">
-				<!-- Links will be cloned here by JS -->
-			</nav>
 			<button class="hamburger-button" id="hamburger-button" aria-label="Menu">
 				<span class="bar"></span>
 				<span class="bar"></span>
 				<span class="bar"></span>
 			</button>
 		</header>
+		<nav id="mobile-nav-panel">
+			<!-- Links will be cloned here by JS -->
+		</nav>
+		<div id="page-overlay"></div>
 
 		<!-- Sidebar -->
 			<section id="sidebar">
@@ -34,13 +37,13 @@
 					<img src="images/Personal-Photo-5.webp" alt="Marco Quantrill" class="profile-pic" />
 					<nav>
 						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#two">About & Skills</a></li>
-							<li><a href="#one">Work Experience</a></li>
-							<li><a href="#certs">Education & Certifications</a></li>
-							<li><a href="#projects">My Projects</a></li>
-							<li><a href="#hobbies">Hobbies & Interests</a></li>
-							<li><a href="#three">Contact</a></li>
+							<li><a href="#intro">WELCOME</a></li>
+							<li><a href="#two">ABOUT & SKILLS</a></li>
+							<li><a href="#one">WORK EXPERIENCE</a></li>
+							<li><a href="#certs">EDUCATION & CERTIFICATIONS</a></li>
+							<li><a href="#projects">MY PROJECTS</a></li>
+							<li><a href="#hobbies">HOBBIES & INTERESTS</a></li>
+							<li><a href="#three">CONTACT</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -62,27 +65,27 @@
 					<section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>About Me</h2>
-							<p>International Business graduate from the University of Lima, ranked in the upper fifth of my class with a specialization in International Finance. Proficient in data analysis using Excel, Power BI, and SQL, with strong skills in HTML, CSS, and Python, and a solid understanding of JavaScript. Fluent in both English and Spanish, I am an organized, proactive, and fast-learning individual with a passion for combining finance, data, and technology to solve real-world problems and drive meaningful impact.</p>
+							<p><strong>International Business graduate</strong> from the University of Lima, ranked in the upper fifth of my class with a specialization in International Finance. Proficient in data analysis using <strong>Excel, Power BI, and SQL</strong>, with strong skills in <strong>HTML, CSS, and Python</strong>, and a solid understanding of <strong>JavaScript</strong>. Fluent in both <strong>English and Spanish</strong>, I am an <strong>organized, proactive, and fast-learning</strong> individual with a passion for <strong>combining finance, data, and technology</strong> to solve real-world problems and drive meaningful impact.</p>
 
 							<div class="marquee">
 								<div class="marquee-track">
 									<div class="marquee-content">
-										<img src="images/Personal-Photo-6.webp" alt="Personal Photo 6" />
-										<img src="images/Personal-Photo-7.webp" alt="Personal Photo 7" />
-										<img src="images/Personal-Photo-8.webp" alt="Personal Photo 8" />
-										<img src="images/Personal-Photo-9.webp" alt="Personal Photo 9" />
-										<img src="images/Personal-Photo-10.webp" alt="Personal Photo 10" />
-										<img src="images/Personal-Photo-11.webp" alt="Personal Photo 11" />
-										<img src="images/Personal-Photo-12.webp" alt="Personal Photo 12" />
+										<img src="images/Personal-Photo-6.webp" alt="Personal Photo 6" loading="lazy" />
+										<img src="images/Personal-Photo-7.webp" alt="Personal Photo 7" loading="lazy" />
+										<img src="images/Personal-Photo-8.webp" alt="Personal Photo 8" loading="lazy" />
+										<img src="images/Personal-Photo-9.webp" alt="Personal Photo 9" loading="lazy" />
+										<img src="images/Personal-Photo-10.webp" alt="Personal Photo 10" loading="lazy" />
+										<img src="images/Personal-Photo-11.webp" alt="Personal Photo 11" loading="lazy" />
+										<img src="images/Personal-Photo-12.webp" alt="Personal Photo 12" loading="lazy" />
 									</div>
 									<div class="marquee-content" aria-hidden="true">
-										<img src="images/Personal-Photo-6.webp" alt="Personal Photo 6" />
-										<img src="images/Personal-Photo-7.webp" alt="Personal Photo 7" />
-										<img src="images/Personal-Photo-8.webp" alt="Personal Photo 8" />
-										<img src="images/Personal-Photo-9.webp" alt="Personal Photo 9" />
-										<img src="images/Personal-Photo-10.webp" alt="Personal Photo 10" />
-										<img src="images/Personal-Photo-11.webp" alt="Personal Photo 11" />
-										<img src="images/Personal-Photo-12.webp" alt="Personal Photo 12" />
+										<img src="images/Personal-Photo-6.webp" alt="Personal Photo 6" loading="lazy" />
+										<img src="images/Personal-Photo-7.webp" alt="Personal Photo 7" loading="lazy" />
+										<img src="images/Personal-Photo-8.webp" alt="Personal Photo 8" loading="lazy" />
+										<img src="images/Personal-Photo-9.webp" alt="Personal Photo 9" loading="lazy" />
+										<img src="images/Personal-Photo-10.webp" alt="Personal Photo 10" loading="lazy" />
+										<img src="images/Personal-Photo-11.webp" alt="Personal Photo 11" loading="lazy" />
+										<img src="images/Personal-Photo-12.webp" alt="Personal Photo 12" loading="lazy" />
 									</div>
 								</div>
 							</div>
@@ -90,31 +93,37 @@
 							<h2>Skills</h2>
 							<div class="features">
 								<section>
+									<span class="icon solid major fa-code"></span>
 									<h3>Web & Data</h3>
 									<p>Python, SQL, HTML & CSS, JavaScript (basic)</p>
 									<p><em>Full stack development, dashboard creation, data analytics.</em></p>
 								</section>
 								<section>
+									<span class="icon solid major fa-chart-pie"></span>
 									<h3>Business Intelligence</h3>
 									<p>MS Excel, Power BI, Pivot Tables & Formulas</p>
 									<p><em>Interactive dashboards, data cleaning, performance tracking.</em></p>
 								</section>
 								<section>
+									<span class="icon solid major fa-chart-line"></span>
 									<h3>Financial Analysis</h3>
 									<p>Technical Analysis, Fundamental Analysis</p>
 									<p><em>Equity screening, trend analysis, portfolio evaluation.</em></p>
 								</section>
 								<section>
+									<span class="icon solid major fa-rocket"></span>
 									<h3>Entrepreneurship</h3>
 									<p>Business Planning, Startup Operations, Process Optimization</p>
 									<p><em>Hands-on experience starting and managing small businesses, with exposure to startup workflows and real-world business development.</em></p>
 								</section>
 								<section>
+									<span class="icon solid major fa-language"></span>
 									<h3>Languages</h3>
 									<p>English – Fluent, Spanish – Fluent</p>
 									<p><em>Bilingual professional for cross-cultural communication.</em></p>
 								</section>
 								<section>
+									<span class="icon solid major fa-brain"></span>
 									<h3>Soft Skills</h3>
 									<p>Organized, Proactive, Responsible, Fast Learner</p>
 									<p><em>Adaptable, detail-oriented, always curious to improve.</em></p>
@@ -129,7 +138,9 @@
 							<h2>Work Experience</h2>
 							<div class="timeline">
 								<div class="timeline-item">
-									<div class="timeline-marker"></div>
+									<div class="timeline-icon">
+										<i class="fas fa-utensils"></i>
+									</div>
 									<div class="timeline-content">
 										<h3>Server</h3>
 										<h4>Skylodge at Powder Mountain</h4>
@@ -143,7 +154,9 @@
 									</div>
 								</div>
 								<div class="timeline-item">
-									<div class="timeline-marker"></div>
+									<div class="timeline-icon">
+										<i class="fas fa-briefcase"></i>
+									</div>
 									<div class="timeline-content">
 										<h3>Administrative Assistant</h3>
 										<h4>Clínica de las Emociones</h4>
@@ -157,7 +170,9 @@
 									</div>
 								</div>
 								<div class="timeline-item">
-									<div class="timeline-marker"></div>
+									<div class="timeline-icon">
+										<i class="fas fa-chart-line"></i>
+									</div>
 									<div class="timeline-content">
 										<h3>Business Intelligence Intern</h3>
 										<h4>Inca One Gold Corp.</h4>
@@ -180,8 +195,11 @@
 							<h2>Education & Certifications</h2>
 							<div class="features">
 								<section>
-									<h3>University of Lima – Lima, Peru</h3>
-									<h4>Bachelor's in International Business | Aug 2018 – July 2024</h4>
+									<span class="icon solid major fa-graduation-cap"></span>
+									<h3>Bachelor's in International Business</h3>
+									<h4>University of Lima</h4>
+									<p class="timeline-date">Aug 2018 - July 2024</p>
+									<em>Lima, Peru</em>
 									<p>Graduated in the upper fifth with an average grade of 15.6/20.</p>
 								</section>
 								<section>
@@ -208,7 +226,7 @@
 							<div class="spotlights">
 								<section class="project-item">
 									<div class="image-clickable" onclick="window.open('https://mq-portfolio-dashboard.streamlit.app/', '_blank')">
-										<img src="images/My-Projects-1.webp" alt="Optimal Portfolio Dashboard Screenshot" data-position="center center" />
+										<img src="images/My-Projects-1.webp" alt="Optimal Portfolio Dashboard Screenshot" data-position="center center" loading="lazy" />
 									</div>
 									<div class="content">
 										<div class="inner">
@@ -223,7 +241,7 @@
 								</section>
 								<section class="project-item">
 									<div class="image-clickable" onclick="window.open('https://country-profile-three.vercel.app/', '_blank')">
-										<img src="images/My-Projects-2.webp" alt="Country Profile Screenshot" data-position="top center" />
+										<img src="images/My-Projects-2.webp" alt="Country Profile Screenshot" data-position="top center" loading="lazy" />
 									</div>
 									<div class="content">
 										<div class="inner">
@@ -238,12 +256,12 @@
 								</section>
 								<section class="project-item">
 									<div class="image-clickable" onclick="window.open('https://www.machupouches.com/', '_blank')">
-										<img src="images/My-Projects-3.webp" alt="Machu Pouches Screenshot" data-position="25% 25%" />
+										<img src="images/My-Projects-3.webp" alt="Machu Pouches Screenshot" data-position="25% 25%" loading="lazy" />
 									</div>
 									<div class="content">
 										<div class="inner">
 											<h2>Machu Pouches Webpage</h2>
-											<p>A responsive commercial website for the 'Machu Pouches' brand. Built with a focus on user experience, it features product showcases and a clean, modern design to attract customers.</p>
+											<p>A responsive commercial website for the Machu Pouches brand. Built with a focus on user experience, it features product showcases and a clean, modern design to attract customers.</p>
 											<ul class="actions">
 												<li><a href="https://www.machupouches.com/" class="button" target="_blank">Go to Page</a></li>
 												<li><a href="https://github.com/MQuantrillC/MP-Webpage" class="button" target="_blank">GitHub</a></li>
@@ -266,26 +284,44 @@
 								<div class="swiper-wrapper">
 									<!-- Slide 1 -->
 									<div class="swiper-slide">
-										<video autoplay muted loop playsinline preload="none">
+										<video autoplay muted loop playsinline preload="none" loading="lazy">
 											<source src="https://res.cloudinary.com/dxe2cpdqs/video/upload/f_auto,q_auto/Vertical-Video-10_p6ttj2.mp4" type="video/mp4">
 										</video>
 									</div>
 									<!-- Slide 2 -->
 									<div class="swiper-slide">
-										<video autoplay muted loop playsinline preload="none">
+										<video autoplay muted loop playsinline preload="none" loading="lazy">
 											<source src="https://res.cloudinary.com/dxe2cpdqs/video/upload/f_auto,q_auto/Vertical-Video-9_pwwaws.mp4" type="video/mp4">
 										</video>
 									</div>
 									<!-- Slide 3 -->
 									<div class="swiper-slide">
-										<video autoplay muted loop playsinline preload="none">
+										<video autoplay muted loop playsinline preload="none" loading="lazy">
 											<source src="https://res.cloudinary.com/dxe2cpdqs/video/upload/f_auto,q_auto/Vertical-Video-3_tzbgre.mp4" type="video/mp4">
 										</video>
 									</div>
 									<!-- Slide 4 -->
 									<div class="swiper-slide">
-										<video autoplay muted loop playsinline preload="none">
+										<video autoplay muted loop playsinline preload="none" loading="lazy">
 											<source src="https://res.cloudinary.com/dxe2cpdqs/video/upload/f_auto,q_auto/Vertical-Video-6_csxwmj.mp4" type="video/mp4">
+										</video>
+									</div>
+									<!-- Slide 5 -->
+									<div class="swiper-slide">
+										<video autoplay muted loop playsinline preload="none" loading="lazy">
+											<source src="https://res.cloudinary.com/dxe2cpdqs/video/upload/f_auto,q_auto/EDITED_Davenport_I_t9z4uz.mp4" type="video/mp4">
+										</video>
+									</div>
+									<!-- Slide 6 -->
+									<div class="swiper-slide">
+										<video autoplay muted loop playsinline preload="none" loading="lazy">
+											<source src="https://res.cloudinary.com/dxe2cpdqs/video/upload/f_auto,q_auto/EDITED_Upper_Sanctuary_Invisible_Stick_bgo6db.mp4" type="video/mp4">
+										</video>
+									</div>
+									<!-- Slide 7 -->
+									<div class="swiper-slide">
+										<video autoplay muted loop playsinline preload="none" loading="lazy">
+											<source src="https://res.cloudinary.com/dxe2cpdqs/video/upload/f_auto,q_auto/EDITED_Monument_I_awkmoz.mp4" type="video/mp4">
 										</video>
 									</div>
 								</div>
@@ -433,6 +469,8 @@
 					// Mobile Navigation
 					const hamburger = document.querySelector('.hamburger-button');
 					const mobileNav = document.getElementById('mobile-nav-panel');
+					const overlay = document.getElementById('page-overlay');
+					const body = document.body;
 					
 					if (hamburger && mobileNav) {
 						// Clone sidebar navigation into the mobile panel
@@ -441,20 +479,42 @@
 							mobileNav.innerHTML = mainNav.innerHTML;
 						}
 
-						hamburger.addEventListener('click', function() {
-							this.classList.toggle('active');
+						const toggleMenu = () => {
+							hamburger.classList.toggle('active');
 							mobileNav.classList.toggle('active');
-						});
+							overlay.classList.toggle('active');
+							body.classList.toggle('noscroll');
+						};
+
+						hamburger.addEventListener('click', toggleMenu);
+						overlay.addEventListener('click', toggleMenu);
 
 						// Close menu when a link is clicked
 						const navLinks = mobileNav.querySelectorAll('a');
 						navLinks.forEach(link => {
-							link.addEventListener('click', () => {
-								hamburger.classList.remove('active');
-								mobileNav.classList.remove('active');
-							});
+							link.addEventListener('click', toggleMenu);
 						});
 					}
+
+					// Animate elements on scroll
+					const revealElements = document.querySelectorAll(
+						'.features section, .timeline-item, .spotlights section'
+					);
+
+					const revealObserver = new IntersectionObserver((entries) => {
+						entries.forEach(entry => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('revealed');
+							}
+						});
+					}, {
+						threshold: 0.1,
+						rootMargin: '0px 0px -50px 0px'
+					});
+
+					revealElements.forEach(el => {
+						revealObserver.observe(el);
+					});
 
 					// Hobbies Video Carousel
 					const videoSwiper = new Swiper('.hobbies-carousel', {

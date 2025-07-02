@@ -5042,7 +5042,7 @@ input, select, textarea {
 		transition: none !important;
 		opacity: 1 !important;
 		-moz-transform: none !important;
-		-webkit-transform: none !import;
+		-webkit-transform: none !important;
 		-ms-transform: none !important;
 		transform: none !important;
 	}

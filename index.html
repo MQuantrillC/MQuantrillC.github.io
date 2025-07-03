@@ -287,49 +287,39 @@
 							<!-- Swiper -->
 							<div class="swiper hobbies-carousel">
 								<div class="swiper-wrapper">
-									<!-- Slide 1: YouTube embed -->
+									<!-- Slide 1: Placeholder -->
 									<div class="swiper-slide">
-										<div class="video-slide">
-											<iframe
-												src="https://www.youtube.com/embed/lPMZ-DDNFJI?enablejsapi=1&autoplay=0&mute=1&loop=1&playlist=lPMZ-DDNFJI"
-												frameborder="0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy">
-											</iframe>
+										<div class="video-slide lazy-youtube" data-video-id="lPMZ-DDNFJI">
+											<img src="https://img.youtube.com/vi/lPMZ-DDNFJI/hqdefault.jpg" alt="YouTube thumbnail for lPMZ-DDNFJI">
+											<div class="play-button-overlay"></div>
 										</div>
 									</div>
-									<!-- Slide 2: YouTube embed -->
+									<!-- Slide 2: Placeholder -->
 									<div class="swiper-slide">
-										<div class="video-slide">
-											<iframe
-												src="https://www.youtube.com/embed/s1qT1yMhu0Q?enablejsapi=1&autoplay=0&mute=1&loop=1&playlist=s1qT1yMhu0Q"
-												frameborder="0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy">
-											</iframe>
+										<div class="video-slide lazy-youtube" data-video-id="s1qT1yMhu0Q">
+											<img src="https://img.youtube.com/vi/s1qT1yMhu0Q/hqdefault.jpg" alt="YouTube thumbnail for s1qT1yMhu0Q">
+											<div class="play-button-overlay"></div>
 										</div>
 									</div>
-									<!-- Slide 3: YouTube Short -->
+									<!-- Slide 3: Placeholder -->
 									<div class="swiper-slide">
-										<div class="video-slide">
-											<iframe
-												src="https://www.youtube.com/embed/1fPH_AR75hE?enablejsapi=1&autoplay=0&mute=1&loop=1&playlist=1fPH_AR75hE"
-												frameborder="0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy">
-											</iframe>
+										<div class="video-slide lazy-youtube" data-video-id="1fPH_AR75hE">
+											<img src="https://img.youtube.com/vi/1fPH_AR75hE/hqdefault.jpg" alt="YouTube thumbnail for 1fPH_AR75hE">
+											<div class="play-button-overlay"></div>
 										</div>
 									</div>
-									<!-- Slide 4: YouTube Short -->
+									<!-- Slide 4: Placeholder -->
 									<div class="swiper-slide">
-										<div class="video-slide">
-											<iframe
-												src="https://www.youtube.com/embed/pDVNUEkKiG0?enablejsapi=1&autoplay=0&mute=1&loop=1&playlist=pDVNUEkKiG0"
-												frameborder="0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy">
-											</iframe>
+										<div class="video-slide lazy-youtube" data-video-id="pDVNUEkKiG0">
+											<img src="https://img.youtube.com/vi/pDVNUEkKiG0/hqdefault.jpg" alt="YouTube thumbnail for pDVNUEkKiG0">
+											<div class="play-button-overlay"></div>
 										</div>
 									</div>
-									<!-- Slide 5: YouTube Short -->
+									<!-- Slide 5: Placeholder -->
 									<div class="swiper-slide">
-										<div class="video-slide">
-											<iframe
-												src="https://www.youtube.com/embed/Jv7iBFwrgxc?enablejsapi=1&autoplay=0&mute=1&loop=1&playlist=Jv7iBFwrgxc"
-												frameborder="0" allow="autoplay; encrypted-media" allowfullscreen loading="lazy">
-											</iframe>
+										<div class="video-slide lazy-youtube" data-video-id="Jv7iBFwrgxc">
+											<img src="https://img.youtube.com/vi/Jv7iBFwrgxc/hqdefault.jpg" alt="YouTube thumbnail for Jv7iBFwrgxc">
+											<div class="play-button-overlay"></div>
 										</div>
 									</div>
 								</div>
@@ -528,41 +518,61 @@
 						revealObserver.observe(el);
 					});
 
-					// Hobbies YouTube Carousel
+					// Hobbies YouTube Carousel - Lazy Loading
 					let players = [];
 					let videoSwiper;
-					let apiReady = false;
 					let swiperInitialized = false;
-					let carouselVisible = false;
 
-					window.onYouTubeIframeAPIReady = function() {
-						apiReady = true;
-						if (carouselVisible) {
-							initializeSwiperAndPlayers();
+					function loadYouTubeIframe(placeholder) {
+						const videoId = placeholder.dataset.videoId;
+						if (videoId) {
+							const iframe = document.createElement('iframe');
+							iframe.src = `https://www.youtube.com/embed/${videoId}?enablejsapi=1&autoplay=0&mute=1&loop=1&playlist=${videoId}`;
+							iframe.frameBorder = '0';
+							iframe.allow = 'autoplay; encrypted-media';
+							iframe.allowFullscreen = true;
+							iframe.loading = 'lazy';
+							placeholder.innerHTML = '';
+							placeholder.appendChild(iframe);
+							return iframe;
 						}
-					};
+						return null;
+					}
 
-					function initializeSwiperAndPlayers() {
-						if (!apiReady || swiperInitialized) return;
-						swiperInitialized = true;
+					function initializeCarousel(carouselElement) {
+						if (swiperInitialized) return;
 
-						const swiperElement = document.querySelector('.hobbies-carousel');
-						if (!swiperElement) return;
+						const placeholders = carouselElement.querySelectorAll('.lazy-youtube');
+						const iframes = Array.from(placeholders).map(p => loadYouTubeIframe(p)).filter(Boolean);
 
-						const iframes = swiperElement.querySelectorAll('.video-slide iframe');
-						iframes.forEach((iframe, index) => {
-							// Assign a unique ID if it doesn't have one to be safe
-							if (!iframe.id) {
-								iframe.id = 'ytplayer-' + index;
-							}
-							players[index] = new YT.Player(iframe.id, {
-								events: {
-									'onReady': (event) => {
-										event.target.mute();
+						window.onYouTubeIframeAPIReady = () => {
+							iframes.forEach((iframe, index) => {
+								if (!iframe.id) iframe.id = `ytplayer-${index}`;
+								players[index] = new YT.Player(iframe.id, {
+									events: {
+										'onReady': (event) => event.target.mute()
 									}
-								}
+								});
 							});
-						});
+
+							// Initialize Swiper after players are getting ready
+							initSwiper(carouselElement);
+						};
+						
+						// Ensure YT API script is loaded
+						if (!window.YT) {
+							const tag = document.createElement('script');
+							tag.src = "https://www.youtube.com/iframe_api";
+							const firstScriptTag = document.getElementsByTagName('script')[0];
+							firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+						} else {
+							window.onYouTubeIframeAPIReady();
+						}
+					}
+
+					function initSwiper(swiperElement) {
+						if (swiperInitialized) return;
+						swiperInitialized = true;
 
 						videoSwiper = new Swiper(swiperElement, {
 							effect: 'coverflow',
@@ -583,62 +593,39 @@
 							},
 							on: {
 								init: function() {
-									if (carouselVisible) {
-										const activePlayer = players[this.realIndex];
-										if (activePlayer && typeof activePlayer.playVideo === 'function') {
-											activePlayer.playVideo();
-										}
+									const activePlayer = players[this.realIndex];
+									if (activePlayer && typeof activePlayer.playVideo === 'function') {
+										activePlayer.playVideo();
 									}
 								},
 								slideChangeTransitionEnd: function() {
-									players.forEach(player => {
-										if (player && typeof player.pauseVideo === 'function') {
-											player.pauseVideo();
-										}
-									});
-									if (carouselVisible) {
-										const activePlayer = players[this.realIndex];
-										if (activePlayer && typeof activePlayer.playVideo === 'function') {
-											activePlayer.playVideo();
-										}
+									players.forEach(player => player && player.pauseVideo && player.pauseVideo());
+									const activePlayer = players[this.realIndex];
+									if (activePlayer && typeof activePlayer.playVideo === 'function') {
+										activePlayer.playVideo();
 									}
 								},
 							},
 						});
 
-						// Add custom click handler for slides
 						swiperElement.querySelectorAll('.swiper-slide').forEach(slide => {
 							slide.addEventListener('click', () => {
 								const slideRealIndex = parseInt(slide.getAttribute('data-swiper-slide-index'));
-								if (!isNaN(slideRealIndex) && videoSwiper.realIndex !== slideRealIndex) {
+								if (videoSwiper.realIndex !== slideRealIndex) {
 									videoSwiper.slideToLoop(slideRealIndex);
 								}
 							});
 						});
 					}
 
-					const carouselObserver = new IntersectionObserver((entries) => {
+					const carouselObserver = new IntersectionObserver((entries, observer) => {
 						entries.forEach(entry => {
 							if (entry.isIntersecting) {
-								carouselVisible = true;
-								if (!swiperInitialized) {
-									initializeSwiperAndPlayers();
-								} else {
-									const activePlayer = players[videoSwiper.realIndex];
-									if (activePlayer && typeof activePlayer.playVideo === 'function') {
-										activePlayer.playVideo();
-									}
-								}
-							} else {
-								carouselVisible = false;
-								players.forEach(player => {
-									if (player && typeof player.pauseVideo === 'function') {
-										player.pauseVideo();
-									}
-								});
+								initializeCarousel(entry.target);
+								observer.unobserve(entry.target);
 							}
 						});
-					}, { threshold: 0.5 });
+					}, { threshold: 0.1 });
 
 					const carouselElement = document.querySelector('.hobbies-carousel');
 					if (carouselElement) {
@@ -648,9 +635,7 @@
 			</script>
 
 		<!-- Back to Top Button -->
-			<a href="#" class="back-to-top">
-				<i class="fas fa-arrow-up"></i>
-			</a>
+			<a href="#" class="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
 
 	</body>
 </html>

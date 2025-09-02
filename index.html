@@ -13,6 +13,94 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/main.css?v=2" />
+		<style>
+			.education-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 1px;
+				border-radius: 0.25em;
+				border: solid 1px rgba(255, 255, 255, 0.15);
+				background: rgba(255, 255, 255, 0.05);
+				margin: 0 0 2em 0;
+			}
+			
+			.degrees-column {
+				display: flex;
+				flex-direction: column;
+			}
+			
+			.degrees-column section {
+				padding: 3.5em 3em 1em 7em;
+				border-bottom: solid 1px rgba(255, 255, 255, 0.15);
+				position: relative;
+				flex: 1;
+			}
+			
+			.degrees-column section:last-child {
+				border-bottom: none;
+			}
+			
+			.courses-column {
+				border-left: solid 1px rgba(255, 255, 255, 0.15);
+			}
+			
+			.courses-column section {
+				padding: 3.5em 3em 1em 7em;
+				position: relative;
+				height: 100%;
+			}
+			
+			.education-grid section .icon {
+				position: absolute;
+				left: 3em;
+				top: 3em;
+				opacity: 1;
+			}
+			
+			@media screen and (max-width: 980px) {
+				.education-grid {
+					display: block;
+				}
+				
+				.degrees-column section,
+				.courses-column section {
+					border-top: solid 1px rgba(255, 255, 255, 0.15);
+					border-left: none;
+					border-bottom: none;
+				}
+				
+				.degrees-column section:first-child {
+					border-top: none;
+				}
+				
+				.courses-column {
+					border-left: none;
+				}
+			}
+			
+			@media screen and (max-width: 736px) {
+				.education-grid section {
+					padding: 2.5em 1.5em 0.1em 5.5em;
+				}
+				
+				.education-grid section .icon {
+					left: 1.5em;
+					top: 2em;
+				}
+			}
+			
+			@media screen and (max-width: 480px) {
+				.education-grid section {
+					padding: 2em 1.5em 0.1em 1.5em;
+				}
+				
+				.education-grid section .icon {
+					left: 0;
+					position: relative;
+					top: 0;
+				}
+			}
+		</style>
 		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -167,7 +255,7 @@
 									<div class="timeline-content">
 										<h3>Product Analyst</h3>
 										<h4>Soma Ring</h4>
-										<p class="timeline-date">Jun – Aug 2025</p>
+										<p class="timeline-date">June – Aug 2025</p>
 										<em>Lima, Peru</em>
 										<ul>
 											<li>Built interactive dashboards and forecasts to track sales, user behavior, and inform product strategy.</li>
@@ -250,25 +338,37 @@
 					<section id="certs" class="wrapper style3 fade-up">
 						<div class="inner">
 							<h2>Education & Certifications</h2>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-graduation-cap"></span>
-									<h3>Bachelor's in International Business</h3>
-									<h4>University of Lima</h4>
-									<p class="timeline-date">Aug 2018 - July 2024</p>
-									<em>Lima, Peru</em>
-									<p>Graduated in the upper fifth with an average grade of 15.6/20.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-book-open"></span>
-									<h3>Specialized Courses</h3>
-									<ul>
-										<li><b>Python Applied to Finance (University of Lima - Executive Education, 2024):</b> Used Python libraries (pandas, yfinance, numpy, quantstats) for financial analysis and created data visualizations using seaborn and matplotlib.</li>
-										<li><b>Stock Market (University of Lima, 2023):</b> Fundamental & technical analysis, basics of options, futures, and derivatives.</li>
-										<li><b>Financial Accounting (Harvard Business Impact Education, 2023):</b> Accounting principles, statement analysis, financial ratio evaluation, and business health assessment.</li>
-										<li><b>Data Analysis (IDAT, 2021):</b> Excel-based statistical analysis, data visualization, and advanced dashboard development in Power BI.</li>
-									</ul>
-								</section>
+							<div class="education-grid">
+								<div class="degrees-column">
+									<section>
+										<span class="icon solid major fa-graduation-cap"></span>
+										<h3>Master's in Finance and Economics</h3>
+										<h4>University of Luxembourg</h4>
+										<p class="timeline-date">Sept 2025 - Present</p>
+										<em>Kirchberg, Luxembourg</em>
+										<p>Currently pursuing advanced studies in finance and economics.</p>
+									</section>
+									<section>
+										<span class="icon solid major fa-graduation-cap"></span>
+										<h3>Bachelor's in International Business</h3>
+										<h4>University of Lima</h4>
+										<p class="timeline-date">Aug 2018 - July 2024</p>
+										<em>Lima, Peru</em>
+										<p>Graduated in the upper fifth with an average grade of 15.6/20.</p>
+									</section>
+								</div>
+								<div class="courses-column">
+									<section>
+										<span class="icon solid major fa-book-open"></span>
+										<h3>Specialized Courses</h3>
+										<ul>
+											<li><b>Python Applied to Finance (University of Lima - Executive Education, 2024):</b> Used Python libraries (pandas, yfinance, numpy, quantstats) for financial analysis and created data visualizations using seaborn and matplotlib.</li>
+											<li><b>Stock Market (University of Lima, 2023):</b> Fundamental & technical analysis, basics of options, futures, and derivatives.</li>
+											<li><b>Financial Accounting (Harvard Business Impact Education, 2023):</b> Accounting principles, statement analysis, financial ratio evaluation, and business health assessment.</li>
+											<li><b>Data Analysis (IDAT, 2021):</b> Excel-based statistical analysis, data visualization, and advanced dashboard development in Power BI.</li>
+										</ul>
+									</section>
+								</div>
 							</div>
 							<hr />
 							<h4>Certifications</h4>
@@ -472,7 +572,7 @@
 										</li>
 										<li>
 											<h3>Phone</h3>
-											<span>+352 621 572 710 </span>
+											<span>Cell: +352 621 572 710<br />WhatsApp: +51 986932487</span>
 										</li>
 										<li>
 											<h3>Social</h3>

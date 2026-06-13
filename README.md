@@ -1,6 +1,6 @@
 # Marco Quantrill - Personal Page
 
-Welcome to my personal portfolio website! I'm a **Full Stack Developer** and **Business Analyst** with a strong foundation in finance, data analysis, and automation.
+Welcome to my personal portfolio website! I'm a **Software Developer** and **Business Analyst** with a strong foundation in finance, data analysis, and automation.
 
 ## About Me
 

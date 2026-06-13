@@ -6,9 +6,28 @@
 -->
 <html>
 	<head>
-		<title>Marco Quantrill - Personal Page</title>
+		<title>Marco Quantrill - Software Developer &amp; Business Analyst</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- SEO -->
+		<meta name="description" content="Marco Quantrill - Software Developer and Business Analyst based in Lima, Peru. Building web tools and dashboards that turn data into actionable insights with Python, SQL, Power BI, and JavaScript." />
+		<meta name="author" content="Marco Quantrill" />
+		<link rel="canonical" href="https://mquantrillc.github.io/" />
+
+		<!-- Open Graph / social share -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Marco Quantrill - Software Developer &amp; Business Analyst" />
+		<meta property="og:description" content="Software Developer and Business Analyst building web tools and dashboards that turn data into actionable insights." />
+		<meta property="og:url" content="https://mquantrillc.github.io/" />
+		<meta property="og:image" content="https://mquantrillc.github.io/images/Personal-Photo-5.webp" />
+
+		<!-- Twitter card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Marco Quantrill - Software Developer &amp; Business Analyst" />
+		<meta name="twitter:description" content="Software Developer and Business Analyst building web tools and dashboards that turn data into actionable insights." />
+		<meta name="twitter:image" content="https://mquantrillc.github.io/images/Personal-Photo-5.webp" />
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -101,7 +120,7 @@
 				}
 			}
 		</style>
-		<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -110,6 +129,9 @@
 		<link rel="shortcut icon" href="favicon/favicon.ico">
 	</head>
 	<body class="is-preload">
+
+		<!-- Scroll progress bar -->
+		<div id="scroll-progress"></div>
 
 		<!-- Mobile Header -->
 		<header id="header-mobile">
@@ -205,38 +227,50 @@
 							<div class="features">
 								<section>
 									<span class="icon solid major fa-code"></span>
-									<h3>Web & Data</h3>
-									<p>Python, SQL, HTML & CSS, JavaScript (basic)</p>
-									<p><em>Full stack development, dashboard creation, data analytics.</em></p>
+									<h3>Web & Data Engineering</h3>
+									<div class="skill-tags"><span>JavaScript</span><span>HTML/CSS</span><span>Python</span><span>SQL</span><span>GCP</span><span>BigQuery</span></div>
+									<p><em>End-to-end solutions: web, data, and automation.</em></p>
+								</section>
+								<section>
+									<span class="icon solid major fa-robot"></span>
+									<h3>Integration & Automation</h3>
+									<div class="skill-tags"><span>Salesforce</span><span>n8n</span><span>Google Apps Script</span><span>Google Sheets</span></div>
+									<p><em>Connecting platforms and automating workflows to streamline operations.</em></p>
+								</section>
+								<section>
+									<span class="icon solid major fa-server"></span>
+									<h3>DevOps & Tooling</h3>
+									<div class="skill-tags"><span>Docker</span><span>Vercel</span><span>GitHub</span></div>
+									<p><em>Containerizing, deploying, and version-controlling applications.</em></p>
 								</section>
 								<section>
 									<span class="icon solid major fa-chart-pie"></span>
 									<h3>Business Intelligence</h3>
-									<p>MS Excel, Power BI, Pivot Tables & Formulas</p>
+									<div class="skill-tags"><span>MS Excel</span><span>Power BI</span><span>Pivot Tables</span><span>Formulas</span></div>
 									<p><em>Interactive dashboards, data cleaning, performance tracking.</em></p>
 								</section>
 								<section>
 									<span class="icon solid major fa-chart-line"></span>
 									<h3>Financial Analysis</h3>
-									<p>Technical Analysis, Fundamental Analysis</p>
+									<div class="skill-tags"><span>Technical Analysis</span><span>Fundamental Analysis</span></div>
 									<p><em>Equity screening, trend analysis, portfolio evaluation. Proficient in using tools like Yahoo Finance, TradingView and Bloomberg Terminal.</em></p>
 								</section>
 								<section>
 									<span class="icon solid major fa-rocket"></span>
 									<h3>Entrepreneurship</h3>
-									<p>Business Planning, Startup Operations, Process Optimization</p>
+									<div class="skill-tags"><span>Business Planning</span><span>Startup Operations</span><span>Process Optimization</span></div>
 									<p><em>Hands-on experience starting and managing small businesses, with exposure to startup workflows and real-world business development.</em></p>
 								</section>
 								<section>
 									<span class="icon solid major fa-language"></span>
 									<h3>Languages</h3>
-									<p>English – Fluent, Spanish – Fluent</p>
+									<div class="skill-tags"><span>English — Fluent</span><span>Spanish — Fluent</span></div>
 									<p><em>Bilingual professional for cross-cultural communication.</em></p>
 								</section>
 								<section>
 									<span class="icon solid major fa-brain"></span>
 									<h3>Soft Skills</h3>
-									<p>Organized, Proactive, Responsible, Fast Learner</p>
+									<div class="skill-tags"><span>Organized</span><span>Proactive</span><span>Responsible</span><span>Fast Learner</span></div>
 									<p><em>Adaptable, detail-oriented, always curious to improve.</em></p>
 								</section>
 							</div>
@@ -248,6 +282,23 @@
 						<div class="inner">
 							<h2>Work Experience</h2>
 							<div class="timeline">
+								<div class="timeline-item">
+									<div class="timeline-icon">
+										<i class="fas fa-chart-line"></i>
+									</div>
+									<div class="timeline-content">
+										<h3>Sales Analytics &amp; Operations Controller</h3>
+										<h4>Xertica.ai</h4>
+										<p class="timeline-date">Feb 2026 – Present</p>
+										<em>Lima, Peru</em>
+										<ul>
+											<li>Build sales and financial projections to guide commercial strategy and forecasting.</li>
+											<li>Develop internal solutions and automations to streamline operations and reporting.</li>
+											<li>Source, clean, and organize data into insightful formats that drive decision-making.</li>
+											<li>Report to senior management on high-value deals and pipeline performance.</li>
+										</ul>
+									</div>
+								</div>
 								<div class="timeline-item">
 									<div class="timeline-icon">
 										<i class="fas fa-chart-bar"></i>
@@ -381,6 +432,7 @@
 										<div class="inner">
 											<h2>Optimal Portfolio Dashboard</h2>
 											<p>A dynamic dashboard built with Streamlit that allows users to construct and analyze optimal investment portfolios. It leverages financial APIs to fetch real-time stock data and applies modern portfolio theory.</p>
+											<div class="project-tags"><span>Streamlit</span><span>Python</span><span>Pandas</span><span>Finance APIs</span></div>
 											<ul class="actions">
 												<li><a href="https://mq-portfolio-dashboard.streamlit.app/" class="button" target="_blank">Go to App</a></li>
 												<li><a href="https://github.com/MQuantrillC/MQ-Portfolio-Dashboard" class="button" target="_blank">GitHub</a></li>
@@ -396,6 +448,7 @@
 										<div class="inner">
 											<h2>Country Profile Comparator</h2>
 											<p>A Next.js application that allows users to compare economic indicators, demographics, trade data, and safety metrics between multiple countries using real-time data from various official sources.</p>
+											<div class="project-tags"><span>Next.js</span><span>React</span><span>REST APIs</span></div>
 											<ul class="actions">
 												<li><a href="https://country-profile-three.vercel.app/" class="button" target="_blank">Go to App</a></li>
 												<li><a href="https://github.com/MQuantrillC/Country-Profile" class="button" target="_blank">GitHub</a></li>
@@ -411,6 +464,7 @@
 										<div class="inner">
 											<h2>Machu Pouches Webpage</h2>
 											<p>A responsive commercial website for the Machu Pouches brand. Built with a focus on user experience, it features product showcases and a clean, modern design to attract customers.</p>
+											<div class="project-tags"><span>Next.js</span><span>Responsive</span><span>E-commerce</span></div>
 											<ul class="actions">
 												<li><a href="https://www.machupouches.com/" class="button" target="_blank">Go to Page</a></li>
 												<li><a href="https://github.com/MQuantrillC/MP-Webpage" class="button" target="_blank">GitHub</a></li>
@@ -426,6 +480,7 @@
 										<div class="inner">
 											<h2>Budget Creator</h2>
 											<p>A personal budgeting tool with real-time exchange rates, financial projections, and interactive charts. Users can track income/expenses, visualize cash flow, and plan their financial future across multiple currencies.</p>
+											<div class="project-tags"><span>Next.js</span><span>React</span><span>Interactive Charts</span></div>
 											<ul class="actions">
 												<li><a href="https://budget-creator-chi.vercel.app/" class="button" target="_blank">Go to App</a></li>
 												<li><a href="https://github.com/MQuantrillC/Budget-Creator" class="button" target="_blank">GitHub</a></li>
@@ -599,7 +654,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+			<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
 			<script src="https://www.youtube.com/iframe_api"></script>
 
 			<script>
@@ -818,6 +873,34 @@
 					if (carouselElement) {
 						carouselObserver.observe(carouselElement);
 					}
+
+					// Scroll progress bar + scrollspy (active nav highlighting)
+					const progressBar = document.getElementById('scroll-progress');
+					const navLinkEls = document.querySelectorAll('#sidebar nav a, #mobile-nav-panel a');
+
+					function updateScrollProgress() {
+						const scrollTop = window.scrollY || document.documentElement.scrollTop;
+						const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+						const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+						if (progressBar) progressBar.style.width = pct + '%';
+					}
+
+					window.addEventListener('scroll', updateScrollProgress, { passive: true });
+					updateScrollProgress();
+
+					const spySections = document.querySelectorAll('#wrapper section[id]');
+					const spyObserver = new IntersectionObserver((entries) => {
+						entries.forEach(entry => {
+							if (entry.isIntersecting) {
+								const id = entry.target.getAttribute('id');
+								navLinkEls.forEach(link => {
+									link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+								});
+							}
+						});
+					}, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+					spySections.forEach(section => spyObserver.observe(section));
 				});
 			</script>
 
